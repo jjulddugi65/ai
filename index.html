@@ -13,14 +13,14 @@
 
     <style>
         /* CSS Styles (이전 코드와 동일) */
-        body {            font-family: sans-serif;            background-color: #f3f4f6;            color: #1f2937;            padding: 2rem 1rem;        }        .container {            max-width: 1200px;            margin: auto;        }        .header {            background-color: #1f2937;            color: white;            padding: 2rem;            border-radius: 1rem;        }        .simulator-section {            background: white;            padding: 2rem;            margin: 2rem 0 0 0;             border-radius: 1rem 1rem 0 0;            box-shadow: 0 2px 15px -5px rgba(0, 0, 0, 0.1);        }        .inflation-chart {            height: 300px;            background: white;            padding: 1rem;            margin: 2rem 0;            border-radius: 1rem;            box-shadow: 0 2px 15px -5px rgba(0, 0, 0, 0.1);        }        /* Real-time Block Explorer iframe style */        #block_explorer_iframe {            width: 100%;            height: 150px;             border: 2px solid #e5e7eb;            border-top: none;            border-radius: 0 0 1rem 1rem;            display: block;            margin-bottom: 2rem;         }        /* SCP Consensus Animation Style */        .scp-consensus {            font-size: 0.8rem;             font-weight: bold;            color: white;             background: #4f46e5;             padding: 0.3rem 0.6rem;            border-radius: 0.5rem;            white-space: nowrap;            opacity: 0;             transition: opacity 0.3s;            margin-left: 1rem;         }        /* Ledger header container for flex */        .ledger-header-container {            display: flex;            align-items: center;            margin-bottom: 1rem;        }        /* Download button style */        .download-button {            background-color: #10b981;             color: white;            padding: 0.3rem 0.6rem;            border-radius: 0.5rem;            font-size: 0.8rem;            font-weight: bold;            cursor: pointer;            border: none;            margin-left: auto;             transition: background-color 0.2s;        }        .download-button:hover:not(:disabled) {            background-color: #059669;
-        }        /* Login and Payment Button Styles */        .pi-button {            padding: 0.75rem 1.5rem;            border-radius: 0.5rem;            font-weight: bold;            cursor: pointer;            border: none;            transition: background-color 0.2s;            width: 100%;            margin-bottom: 1rem;        }        .login-button {            background-color: #f7a43b; /* Pi Yellow */            color: white;        }        .login-button:hover:not(:disabled) {            background-color: #e09133;
-        }        .payment-button {            background-color: #4CAF50; /* Green */            color: white;        }        .payment-button:hover:not(:disabled) {            background-color: #45A049;
+        body {           font-family: sans-serif;             background-color: #f3f4f6;             color: #1f2937;             padding: 2rem 1rem;         }         .container {             max-width: 1200px;             margin: auto;         }         .header {             background-color: #1f2937;             color: white;             padding: 2rem;             border-radius: 1rem;         }         .simulator-section {             background: white;             padding: 2rem;             margin: 2rem 0 0 0;             border-radius: 1rem 1rem 0 0;             box-shadow: 0 2px 15px -5px rgba(0, 0, 0, 0.1);         }         .inflation-chart {             height: 300px;             background: white;             padding: 1rem;             margin: 2rem 0;             border-radius: 1rem;             box-shadow: 0 2px 15px -5px rgba(0, 0, 0, 0.1);         }         /* Real-time Block Explorer iframe style */         #block_explorer_iframe {             width: 100%;             height: 150px;             border: 2px solid #e5e7eb;             border-top: none;             border-radius: 0 0 1rem 1rem;             display: block;             margin-bottom: 2rem;          }         /* SCP Consensus Animation Style */         .scp-consensus {             font-size: 0.8rem;              font-weight: bold;              color: white;              background: #4f46e5;              padding: 0.3rem 0.6rem;              border-radius: 0.5rem;              white-space: nowrap;              opacity: 0;              transition: opacity 0.3s;              margin-left: 1rem;          }         /* Ledger header container for flex */         .ledger-header-container {             display: flex;             align-items: center;             margin-bottom: 1rem;         }         /* Download button style */         .download-button {             background-color: #10b981;              color: white;             padding: 0.3rem 0.6rem;             border-radius: 0.5rem;             font-size: 0.8rem;             font-weight: bold;             cursor: pointer;             border: none;             margin-left: auto;              transition: background-color 0.2s;         }         .download-button:hover:not(:disabled) {             background-color: #059669;
+        }         /* Login and Payment Button Styles */         .pi-button {             padding: 0.75rem 1.5rem;             border-radius: 0.5rem;             font-weight: bold;             cursor: pointer;             border: none;             transition: background-color 0.2s;             width: 100%;             margin-bottom: 1rem;         }         .login-button {             background-color: #f7a43b; /* Pi Yellow */             color: white;         }         .login-button:hover:not(:disabled) {             background-color: #e09133;
+        }         .payment-button {             background-color: #4CAF50; /* Green */             color: white;         }         .payment-button:hover:not(:disabled) {             background-color: #45A049;
         }
         .login-button:disabled, .payment-button:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-        }        /* Input and Select styling for better visibility */        input[type="number"], select {            width: 100%;            padding: 0.5rem;            margin-top: 0.25rem;            border: 1px solid #d1d5db;            border-radius: 0.375rem;        }        /* Style for Public Key cell to ensure readability (글꼴 크기 축소 반영) */        .pk-cell {            font-family: monospace;            font-size: 0.65rem;         }        .grid {            display: grid;        }        .grid-cols-2 {            grid-template-columns: repeat(2, minmax(0, 1fr));        }        .gap-4 {            gap: 1rem;        }    </style>
+        }         /* Input and Select styling for better visibility */         input[type="number"], select {             width: 100%;             padding: 0.5rem;             margin-top: 0.25rem;             border: 1px solid #d1d5db;             border-radius: 0.375rem;         }         /* Style for Public Key cell to ensure readability (글꼴 크기 축소 반영) */         .pk-cell {             font-family: monospace;             font-size: 0.65rem;          }         .grid {             display: grid;         }         .grid-cols-2 {             grid-template-columns: repeat(2, minmax(0, 1fr));         }         .gap-4 {             gap: 1rem;         }     </style>
 </head>
 <body>
     <div id="message_box" style="z-index: 1000; position: fixed; top: 1rem; left: 50%; transform: translateX(-50%) scale(0); transition: transform 0.3s; padding: 0.75rem 1.5rem; border-radius: 0.5rem; color: white; background-color: #1f2937;">        App Status: Ready    </div>
@@ -50,7 +50,7 @@
             </div>        
         </div>
         
-        <iframe id="block_explorer_iframe"                 src="https://blockexplorer.minepi.com/testnet/"                 title="Pi Testnet Block Explorer"                 frameborder="0"                allow="autoplay; encrypted-media"></iframe>
+        <iframe id="block_explorer_iframe"                  src="https://blockexplorer.minepi.com/testnet/"                  title="Pi Testnet Block Explorer"                  frameborder="0"                 allow="autoplay; encrypted-media"></iframe>
 
         <div id="inflation_chart" class="inflation-chart">
             <div class="flex justify-between items-center mb-2">
@@ -59,9 +59,9 @@
             </div>
         </div>
 
-        <div class="table-container p-6 mb-8 relative bg-white rounded-xl shadow-lg">                         
+        <div class="table-container p-6 mb-8 relative bg-white rounded-xl shadow-lg">                      
             <div class="ledger-header-container">
-                <h2 class="text-2xl font-bold text-gray-800">TRANSACTION LEDGER (Off-Chain/Logical)</h2>                                
+                <h2 class="text-2xl font-bold text-gray-800">TRANSACTION LEDGER (Off-Chain/Logical)</h2>                            
                 <button class="download-button" onclick="downloadLedger()">Download CSV</button>
                 <div id="scp_consensus_status" class="scp-consensus" style="opacity: 0;">SCP Consensus: 0/10001 Nodes</div>
             </div>
@@ -86,7 +86,7 @@
         // === Core Variables ===        
         let transactionID = 18; 
         const maxNodes = 10001;
-        let authenticatedUser = null;                 
+        let authenticatedUser = null;                   
         
         // --- Public Tax (공공세) & Economy Variables ---        
         const PUBLIC_TAX_RATE = 0.01; // 1% Public Tax (0.01)        
@@ -94,13 +94,13 @@
         let publicTaxPool = 0.0; // 누적 공공세 풀 (합계액)        
         // ----------------------------------------------------
 
-        // 🟢 2. Pi SDK 초기화 (실제 버전)
+        // 🟢 2. Pi SDK 초기화 (Redirect URI 수정 완료)
         Pi.init({
             version: "2.0",
-            // Client ID 반영 완료
+            // Client ID 반영 완료 (개발자 포털 값과 일치)
             client_id: "jnrsrvjzenxa82kme8vdpduv6ixhspysioljdbnhvfrvqb5gcde2026r7h2slypd", 
             
-            // Netlify 주소 반영 (이전 대화 기반)
+            // 🚨 Redirect URI 수정 완료 (Netlify 주소로 통일)
             redirect_uri: "https://boisterous-mermaid-699424.netlify.app/",
             sandbox: true, // 테스트넷에서 실행
 
@@ -115,8 +115,8 @@
             const messageBox = document.getElementById('message_box');
             if (!messageBox) return; 
             
-            messageBox.textContent = message;            
-            messageBox.style.opacity = 1;            
+            messageBox.textContent = message;           
+            messageBox.style.opacity = 1;           
             messageBox.style.transform = 'translateX(-50%) scale(1)';                        
             
             messageBox.classList.remove('bg-green-600', 'bg-red-600', 'bg-gray-800');
@@ -124,7 +124,7 @@
                 messageBox.style.backgroundColor = '#4CAF50'; /* Green */
             } else {
                 messageBox.style.backgroundColor = '#F44336'; /* Red */
-            }                        
+            }                       
             
             setTimeout(() => {
                 messageBox.style.transform = 'translateX(-50%) scale(0)';
@@ -145,6 +145,7 @@
             scpStatusElement.style.opacity = 1;
             const consensusSteps = [31, 314, 3141, maxNodes]; 
             let stepIndex = 0;                        
+            
             showMessage(`AI selected ${scType}. Starting SCP Consensus...`, true); 
             
             const interval = setInterval(() => {
@@ -155,8 +156,8 @@
                     clearInterval(interval);
                     scpStatusElement.textContent = `SCP Consensus: 10001/${maxNodes} Nodes (Finalized)`;
                 }
-            }, 500);         
-        }                
+            }, 500);          
+        }            
 
         // 🟢 3. Pi Authentication (실제 버전)
         function piAuthenticate() {
@@ -188,8 +189,8 @@
                 return;
             }
             
-            const minRequiredAmount = 0.0101;                         
-            if (amount < minRequiredAmount) {                 
+            const minRequiredAmount = 0.0101;            
+            if (amount < minRequiredAmount) {              
                 showMessage(`Pi Amount must be greater than or equal to ${minRequiredAmount.toFixed(4)} Pi (0.0101/n logic).`, false);
                 return;
             }
@@ -218,20 +219,20 @@
             
             // --- 1. 경제 로직: 작업 비용 (W), 공공세 (P), 고정 수수료 (F) 역산 ---            
             // W = (A - F) / (1 + T)            
-            const workCost = (amount - FIXED_FEE) / (1 + PUBLIC_TAX_RATE);                        
+            const workCost = (amount - FIXED_FEE) / (1 + PUBLIC_TAX_RATE);                       
             
             // 공공세 계산: 징수            
             const publicTax = workCost * PUBLIC_TAX_RATE;                        
             
             // 공공세 풀에 누적 합계 적립 및 업데이트            
             publicTaxPool += publicTax;
-            updatePublicTaxDisplay(); 
+            updatePublicTaxDisplay();
             // ------------------------------------------------------------------
 
             // 2. Smart Contract Selection (Work Cost 기준으로 1st/2nd SC 선택)            
             let scType = workCost >= 2.0 ? '2nd SC (Market)' : '1st SC (Survival)';
             
-            startSCPAnimation(scType); 
+            startSCPAnimation(scType);
             const ledger = document.getElementById('smart_contract_ledger');                        
             
             // Main Transaction ID            
@@ -267,7 +268,7 @@
             `;
             
             // 4. Ledger Entry: Fixed Fee 징수 기록 (Creator 지불)            
-            transactionID++;             
+            transactionID++;            
             let newRowFee = ledger.insertRow();
             newRowFee.innerHTML = `
                 <td class="px-2 py-2 text-xs">${transactionID}</td>
@@ -280,7 +281,7 @@
             `;                        
             
             // 5. Ledger Entry: Public Tax 징수 기록 (Creator 지불)            
-            transactionID++;             
+            transactionID++;            
             let newRowTax = ledger.insertRow();
             newRowTax.innerHTML = `
                 <td class="px-2 py-2 text-xs">${transactionID}</td>
@@ -317,7 +318,7 @@
             `;
             
             showMessage(`Payment successful: Work Cost ($${workCost.toFixed(4)}), Tax ($${publicTax.toFixed(4)}), Fee ($${FIXED_FEE.toFixed(4)}) separated.`, true);        
-        }                
+        }            
 
         // --- Ledger Download Function (유지) ---
         function downloadLedger() {
@@ -399,7 +400,7 @@
                 .attr("width", x.bandwidth())
                 .attr("height", d => height - y(d))
                 .attr("fill", "#6366f1");
-        });    
+        });     
     </script>
 </body>
 </html>
